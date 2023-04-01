@@ -73,7 +73,7 @@ Widget SupportButton(
     ) {
   return ElevatedButton(
     style: ElevatedButton.styleFrom(
-        backgroundColor: backgroundColor ??  accentColor_5,
+        backgroundColor: backgroundColor ??  accentColor_5.withOpacity(0),
         padding: EdgeInsets.symmetric(
             vertical: largeButton ? sp16 : sp8,
             horizontal: largeButton ? sp16 : sp12),
