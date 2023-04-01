@@ -1,10 +1,9 @@
 part of base_lhe;
 
 Widget AppInput({
-  required String label,
+  String? label,
   required String hintText,
   required TextEditingController? controller,
-  required BuildContext context,
   required TextInputType textInputType,
   required Widget? suffixIcon,
   required Function validate,
@@ -19,7 +18,7 @@ Widget AppInput({
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
-      RichText(
+      if (label != null) RichText(
         text: TextSpan(
           text: label,
           style: p5.copyWith(color: blackColor),
