@@ -1,6 +1,7 @@
 part of base_lhe;
 
-Widget MainButton(
+class BaseButton {
+  Widget MainButton(
     {required String? title,
     required Function event,
     required bool largeButton,
@@ -69,11 +70,13 @@ Widget SupportButton(
     required Function event,
     required bool largeButton,
     required Widget? icon,
-    required Color? backgroundColor}
+    required Color? backgroundColor,
+    Color? color}
     ) {
   return ElevatedButton(
     style: ElevatedButton.styleFrom(
-        backgroundColor: backgroundColor ??  accentColor_5.withOpacity(0),
+      elevation: 0,
+        backgroundColor: backgroundColor ?? accentColor_5,
         padding: EdgeInsets.symmetric(
             vertical: largeButton ? sp16 : sp8,
             horizontal: largeButton ? sp16 : sp12),
@@ -89,9 +92,10 @@ Widget SupportButton(
         if (title != null)
           Text(
             '$title',
-            style: largeButton ? h6 : p5,
+            style: largeButton ? h6.copyWith(color: color ?? blackColor) : p5.copyWith(color: color ?? blackColor),
           )
       ],
     ),
   );
+}
 }
