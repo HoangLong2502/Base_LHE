@@ -23,7 +23,7 @@ part of base_lhe;
           if (icon != null && title != null) const SizedBox(width: sp8),
           if (title != null)
             Text(
-              '$title',
+              title,
               style: largeButton ? h6 : p5,
             )
         ],
@@ -57,7 +57,7 @@ part of base_lhe;
           if (icon != null && title != null) const SizedBox(width: sp8),
           if (title != null)
             Text(
-              '$title',
+              title,
               style: (largeButton ? h6 : p5).copyWith(color: blackColor),
             )
         ],
@@ -92,7 +92,7 @@ part of base_lhe;
           if (icon != null && title != null) const SizedBox(width: sp8),
           if (title != null)
             Text(
-              '$title',
+              title,
               style: largeButton
                   ? h6.copyWith(color: color ?? blackColor)
                   : p5.copyWith(color: color ?? blackColor),
