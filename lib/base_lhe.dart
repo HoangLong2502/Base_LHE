@@ -9,12 +9,15 @@ part 'src/constants/color.dart';
 part 'src/constants/spacing.dart';
 part 'src/constants/typography.dart';
 part 'src/constants/size_device.dart';
+part 'src/constants/assets_path.dart';
 
 // Components
 part 'src/components/base_select.dart';
 part 'src/components/base_input.dart';
 part 'src/components/base_container.dart';
 part 'src/components/base_button.dart';
+part 'src/components/base_scaffold.dart';
+part 'src/components/base_appBar.dart';
 
 // Models
 part 'src/models/select.dart';
