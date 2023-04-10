@@ -13,6 +13,7 @@ Widget AppInput({
   FocusNode? fn,
   bool required = false,
   Function? onTap,
+  Color? borderColor,
   // required Function onChanged
 }) {
   return Column(
@@ -48,8 +49,8 @@ Widget AppInput({
           contentPadding: const EdgeInsets.all(12),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8),
-            borderSide: const BorderSide(
-              color: borderColor_2,
+            borderSide: BorderSide(
+              color: borderColor ?? borderColor_2,
               width: 1,
             ),
           ),
