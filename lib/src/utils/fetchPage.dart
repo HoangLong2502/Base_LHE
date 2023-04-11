@@ -4,7 +4,7 @@ class PagingEvent {
   Future<void> fetchPage({
   required PagingController pagingController,
   required int pageSize,
-  required fetchData,
+  required Function(int) fetchData,
   required int pageKey,
 }) async {
   try {

@@ -93,10 +93,7 @@ class _BaseSelectAdvancedState extends State<BaseSelectAdvanced>
       PagingEvent().fetchPage(
         pagingController: _pagingController,
         pageSize: 10,
-        fetchData:(key) {
-          print(1);
-          widget.getListSelect!(key);
-        },
+        fetchData: widget.getListSelect!,
         pageKey: pageKey,
       );
     });
