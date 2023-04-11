@@ -288,11 +288,12 @@ class _BaseSelectAdvancedState extends State<BaseSelectAdvanced>
                         child: ListTile(
                           leading: SizedBox(
                             child: Image.network(
+                              item.img ??
                               'https://www.shutterstock.com/image-vector/red-store-vector-sign-promotion-260nw-1918121837.jpg',
                             ),
                           ),
                           title: Text(item.label),
-                          subtitle: Text(item.subTitle!),
+                          subtitle:item.subTitle == null ? const SizedBox() : Text(item.subTitle!),
                         ),
                       ),
                       noItemsFoundIndicatorBuilder: (context) => Center(
