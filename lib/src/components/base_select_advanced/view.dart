@@ -8,13 +8,15 @@ class BaseSelectAdvanced extends StatefulWidget {
     required this.label,
     this.hintSelect = '',
     this.eventSelect,
+    this.pageSize = 10,
     required this.getListSelect,
   });
 
   final String? label;
   final String hintSelect;
   final Function? eventSelect;
-  final Function(int)? getListSelect;
+  final Function(int, int, String)? getListSelect;
+  final int pageSize;
 
   @override
   State<BaseSelectAdvanced> createState() => _BaseSelectAdvancedState();
@@ -92,9 +94,14 @@ class _BaseSelectAdvancedState extends State<BaseSelectAdvanced>
     _pagingController.addPageRequestListener((pageKey) {
       PagingEvent().fetchPage(
         pagingController: _pagingController,
-        pageSize: 10,
-        fetchData:(key) {
-          return widget.getListSelect?.call(key);
+        pageSize: widget.pageSize,
+        fetchData: (key) async {
+          var res = await widget.getListSelect?.call(
+            key,
+            widget.pageSize,
+            _editTextController.text,
+          );
+          return res;
         },
         pageKey: pageKey,
       );
@@ -289,11 +296,13 @@ class _BaseSelectAdvancedState extends State<BaseSelectAdvanced>
                           leading: SizedBox(
                             child: Image.network(
                               item.img ??
-                              'https://www.shutterstock.com/image-vector/red-store-vector-sign-promotion-260nw-1918121837.jpg',
+                                  'https://www.shutterstock.com/image-vector/red-store-vector-sign-promotion-260nw-1918121837.jpg',
                             ),
                           ),
                           title: Text(item.label),
-                          subtitle:item.subTitle == null ? const SizedBox() : Text(item.subTitle!),
+                          subtitle: item.subTitle == null
+                              ? const SizedBox()
+                              : Text(item.subTitle!),
                         ),
                       ),
                       noItemsFoundIndicatorBuilder: (context) => Center(
