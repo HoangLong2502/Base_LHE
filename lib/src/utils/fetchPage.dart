@@ -9,6 +9,7 @@ class PagingEvent {
 }) async {
   try {
     final newItems = await fetchData(pageKey);
+    print('newItems : $newItems');
     final isLastPage = newItems.length < pageSize;
     if (isLastPage) {
       pagingController.appendLastPage(newItems);
