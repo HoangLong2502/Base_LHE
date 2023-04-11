@@ -8,7 +8,7 @@ abstract class BaseSelectSetup {
 
 class BaseSelect extends StatelessWidget {
   List<SelectModel> list;
-  SelectModel select;
+  SelectModel? select;
   Function? handleSelect;
   String? hint;
   Function validator;
