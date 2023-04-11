@@ -14,7 +14,7 @@ class BaseSelectAdvanced extends StatefulWidget {
   final String? label;
   final String hintSelect;
   final Function? eventSelect;
-  final Function(int) getListSelect;
+  final Function(int)? getListSelect;
 
   @override
   State<BaseSelectAdvanced> createState() => _BaseSelectAdvancedState();
@@ -93,7 +93,9 @@ class _BaseSelectAdvancedState extends State<BaseSelectAdvanced>
       PagingEvent().fetchPage(
         pagingController: _pagingController,
         pageSize: 10,
-        fetchData: widget.getListSelect,
+        fetchData:(key) {
+          return widget.getListSelect?.call(key);
+        },
         pageKey: pageKey,
       );
     });
