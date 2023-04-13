@@ -11,7 +11,7 @@ class BaseSelect extends StatelessWidget {
   SelectModel? select;
   Function? handleSelect;
   String? hint;
-  Function validator;
+  Function(SelectModel?) validator;
 
   BaseSelect({
     required this.list,
