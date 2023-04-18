@@ -25,6 +25,7 @@ part 'src/components/base_button.dart';
 part 'src/components/base_scaffold.dart';
 part 'src/components/base_appBar.dart';
 part 'src/components/base_select_advanced/view.dart';
+part 'src/components/base_infinite_scroll.dart';
 
 // Models
 part 'src/models/select.dart';
