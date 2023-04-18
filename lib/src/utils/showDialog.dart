@@ -46,14 +46,10 @@ class DialogUtils {
     showDialog(
       context: context,
       builder: (context) {
-        return Center(
-          child: Card(
-            child: BasePopupNoti(
-              click: accept,
-              content: content,
-              status: StatusNoti.SUCCESS,
-            ),
-          ),
+        return BasePopupNoti(
+          click: accept,
+          content: content,
+          status: StatusNoti.SUCCESS,
         );
       },
     );
@@ -114,14 +110,10 @@ class DialogUtils {
     showDialog(
       context: context,
       builder: (context) {
-        return Center(
-          child: Card(
-            child: BasePopupNoti(
-              click: null,
-              content: content,
-              status: StatusNoti.ERROR,
-            ),
-          ),
+        return BasePopupNoti(
+          click: null,
+          content: content,
+          status: StatusNoti.ERROR,
         );
       },
     );
